@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact / Booking</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="javascript.js"></script>
+    <script src="sc.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>FirstRoast</h1>
+    <img src="FirstRoast.png" alt="First Roast logo" width="200">
+    <p id="status"></p>
+    <p id="greeting"></p>
+  </header>
+
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact / Booking</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Contact Us, Book a Table </h2>
+    <p>Please fill out the form below. Fields marked with (*) are required.</p>
+
+    <form method="post" action="https://formspree.io/f/mgvgzqjd" onsubmit="return formvalidation()">
+        <h3>Your Contact Information</h3>
+        <p>
+            <label for="name">Your Name: *</label><br>
+            <input type="text" id="name" name="customer_name" size="40" required>
+        </p>
+
+        <p>
+            <label for="tel">Phone Number: *</label><br>
+            <input type="tel" id="tel" name="phone_number" size="40" placeholder="e.g., 05xxxxxxx" required>
+        </p>
+
+        <p>
+            <label for="email">Email (For Confirmation):</label><br>
+            <input type="email" id="email" name="customer_email" size="40" placeholder="example@mail.com">
+        </p>
+
+        <h3>Your Request Details</h3>
+
+        <p>
+            <label for="service">I would like to: *</label><br>
+            <select name="service_type" id="service" required>
+                <option value="">Select Service Type</option>
+                <option value="booking">Book a Table</option>
+                <option value="inquiry">Ask a General Question</option>
+            </select>
+        </p>
+        
+        <p>
+            <label for="date">Date: *</label><br>
+            <input type="date" id="date" name="preferred_date" required>
+        </p>
+
+        <p>
+            <label for="time">Time: *</label><br>
+            <input type="time" id="time" name="preferred_time" required>
+        </p>
+        
+        <p>
+            <label for="people">Number of People (If Booking):</label><br>
+            <input type="number" id="people" name="num_people" min="1" max="10" value="1">
+        </p>
+        
+        <p>
+            <label for="details">Please tell us your request:</label><br>
+            <textarea id="details" name="request_details" rows="6" cols="40" required placeholder=" Write your Question"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Submit Request">
+            <input type="reset" value="Clear">
+    </form>
+  </main>
+</body>
+</html>
